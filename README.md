@@ -49,12 +49,12 @@ Aceasta este utilizată exclusiv pentru ca noi, de pe mașina gazdă, să ne put
 * Aceasta permite mașinii virtuale să aibă acces la internet (pentru instalare pachete) și permite gazdei să inițieze conexiuni către ea prin Port Forwarding.
 
 Activarea interfeței NAT pe primul adaptor pentru R1:
-![Configurare NAT R1](VMRouterConfiguration/VirtualBox/R1_NATConfiguration.jpeg)
+![Configurare NAT R1](R1_NATConfiguration.jpeg)
 <br/>
 <br/>
 
 Detalii avansate ale adaptorului NAT:
-![Configurare Avansată NAT](VMRouterConfiguration/VirtualBox/R1-NATAdvancedConfiguration.jpeg)
+![Configurare Avansată NAT](R1-NATAdvancedConfiguration.jpeg)
 
 **2. Regulile de Port Forwarding (esențial pentru SSH)**
 - Pentru a accesa fiecare router individual, trebuie să mapăm un port de pe localhost (ex: 2221) către portul 22 (SSH) al mașinii virtuale.
@@ -62,19 +62,19 @@ Detalii avansate ale adaptorului NAT:
 
 
 Definirea regulii de mapare a porturilor (Host 2221 -> Guest 22) pentru accesul SSH:
-![Reguli Port Forwarding](VMRouterConfiguration/VirtualBox/R1-NATPortForwardingRules.jpeg)
+![Reguli Port Forwarding](R1-NATPortForwardingRules.jpeg)
 
 **3. Interfețele Interne (topologia propriu-zisă)**
 - Pentru ca routerele să comunice între ele și să simuleze topologia de rețea (pentru protocolul RIP), se folosesc adaptoare setate pe **Internal Network**.
 * **Configurare:** Numele rețelei interne (ex: `intnet12`) trebuie să fie identic pe cele două routere care sunt conectate direct (în acest caz, R1 și R2).
 
 Configurarea adaptorului 2 pe R1 pentru a se conecta la rețeaua internă "intnet12":
-![Configurare R1 Internal Network](VMRouterConfiguration/VirtualBox/R1-INTNET12Configuration.jpeg)
+![Configurare R1 Internal Network](R1-INTNET12Configuration.jpeg)
 <br/>
 <br/>
 
 Configurarea adaptorului 4 pe R2 pentru a se conecta la aceeași rețea "intnet12", stabilind legătura fizică virtuală:
-![Configurare R2 Internal Network](VMRouterConfiguration/VirtualBox/R2-INTNET12Configuration.jpeg)
+![Configurare R2 Internal Network](R2-INTNET12Configuration.jpeg)
 
 ### Obs: 
 - Acești pași sunt repetați pentru toate legăturile existente în topologia prezentată în cap. 1
